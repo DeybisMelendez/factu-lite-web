@@ -1,0 +1,172 @@
+{
+  "app": {
+    "name": "Factu Lite",
+    "description": "Sistema de ventas e inventario para negocios pequeños",
+    "country": "Nicaragua",
+    "logo": "factulite.svg"
+  },
+  "advisors": [
+    {
+      "id": 1,
+      "name": "Ing. Fernando Aguirre",
+      "phone": "+50581088124",
+      "avatar": null
+    },
+    {
+      "id": 2,
+      "name": "Lic. Xochilt Hernandez",
+      "phone": "+50581178364",
+      "avatar": null
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-04-01",
+      "apk": "/downloads/factu-lite-v1.0.0.apk",
+      "notes": "Version inicial"
+    }
+  ],
+  "promotion": {
+    "active": true,
+    "title": "Promocion Especial",
+    "description": "Impresora termica portatil Bluetooth GRATIS",
+    "condition": "Al obtener tu primera licencia anual",
+    "badge": "LIMITADO"
+  },
+  "pricing": {
+    "currency": "C$",
+    "plans": [
+      {
+        "id": "trimestral",
+        "name": "Trimestral",
+        "duration": "3 meses",
+        "price": 1400,
+        "features": [
+          "Acceso completo a todos los modulos",
+          "Soporte por WhatsApp",
+          "Actualizaciones incluidas"
+        ],
+        "popular": false
+      },
+      {
+        "id": "semestral",
+        "name": "Semestral",
+        "duration": "6 meses",
+        "price": 2200,
+        "features": [
+          "Acceso completo a todos los modulos",
+          "Soporte por WhatsApp",
+          "Actualizaciones incluidas"
+        ],
+        "popular": false
+      },
+      {
+        "id": "anual",
+        "name": "Anual",
+        "duration": "12 meses",
+        "price": 3700,
+        "features": [
+          "Acceso completo a todos los modulos",
+          "Soporte prioritario por WhatsApp",
+          "Actualizaciones incluidas",
+          "IMPRESORA TERMICA BLUETOOTH GRATIS"
+        ],
+        "popular": true,
+        "promo": true
+      }
+    ]
+  },
+  "trial": {
+    "days": 5,
+    "limitations": [
+      "Hasta 10 productos registrados",
+      "Hasta 10 ventas registradas",
+      "Hasta 10 compras registradas",
+      "Hasta 5 clientes registrados",
+      "Hasta 3 vendedores registrados"
+    ]
+  },
+  "features": [
+    {
+      "icon": "point_of_sale",
+      "title": "Ventas",
+      "description": "Crea facturas, historial, reimprime tickets, gestiona créditos y anula ventas."
+    },
+    {
+      "icon": "inventory_2",
+      "title": "Catálogo de Productos",
+      "description": "Registra productos con SKU, nombre, precio, costo y stock. Alertas de inventario bajo."
+    },
+    {
+      "icon": "people",
+      "title": "Clientes y Vendedores",
+      "description": "Gestiona la informacion de tus clientes y equipo de ventas."
+    },
+    {
+      "icon": "point_of_sale",
+      "title": "Caja",
+      "description": "Controla tu caja registradora: abre, registra movimientos y cierra con arqueo."
+    },
+    {
+      "icon": "shopping_cart",
+      "title": "Compras a Proveedores",
+      "description": "Registra compras y actualiza automaticamente stock y costo promedio."
+    },
+    {
+      "icon": "print",
+      "title": "Impresion de Comprobantes",
+      "description": "Conecta por Bluetooth a impresoras termicas para imprimir tickets y facturas."
+    },
+    {
+      "icon": "file_download",
+      "title": "Exportación a Excel",
+      "description": "Exporta tus ventas, compras y productos a formato CSV."
+    },
+    {
+      "icon": "backup",
+      "title": "Respaldo de Datos",
+      "description": "Exporta y restaura tu base de datos para nunca perder tu informacion."
+    }
+  ],
+  "screenshots": [
+    {
+      "title": "Pantalla Principal",
+      "url": "screenshots/principal.jpeg",
+      "alt": "Screenshot de la pantalla principal de Factu Lite"
+    },
+    {
+      "title": "Ventas",
+      "url": "screenshots/ventas.jpeg",
+      "alt": "Screenshot del registro de ventas"
+    },
+    {
+      "title": "Arqueo de Caja",
+      "url": "screenshots/arqueo.jpeg",
+      "alt": "Screenshot del arqueo de caja"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Cuantos dias dura la prueba gratuita?",
+      "answer": "Puedes probar Factu Lite gratis durante 5 dias con algunas limitaciones: hasta 10 productos, 10 ventas, 10 compras, 5 clientes y 3 vendedores registrados."
+    },
+    {
+      "question": "Puedo usar Factu Lite en varios dispositivos?",
+      "answer": "No, Factu Lite esta diseñado para funcionar en un solo dispositivo. Los datos se guardan localmente en tu celular o tablet."
+    },
+    {
+      "question": "Funciona sin internet?",
+      "answer": "Factu Lite funciona la mayor parte del tiempo sin internet. Solo requiere conexión ocasional para validar la licencia. Tus datos se quedan en tu dispositivo y son 100% tuyos."
+    },
+    {
+      "question": "Que pasa cuando vence la licencia?",
+      "answer": "Cuando vence la licencia, deberas solicitar una renovacion para continuar usando Factu Lite con todas sus funcionalidades."
+    },
+    {
+      "question": "Puedo transferir mi licencia a otro dispositivo?",
+      "answer": "Si, puedes respaldar tus datos desde un dispositivo y restaurarlos en otro. Tu licencia se reactivara en el nuevo dispositivo."
+    }
+  ],
+  "whatsappMessage": "Hola! Me interesa conocer mas sobre Factu Lite."
+}

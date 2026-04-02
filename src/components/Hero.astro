@@ -1,0 +1,342 @@
+---
+import config from "../data/config.json";
+
+const latestVersion = config.versions[0];
+const whatsappBase = "https://wa.me/";
+---
+
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <div class="hero-badges">
+        <span class="badge badge-primary">
+          <span class="material-icons" style="font-size: 14px;">schedule</span>
+          {config.trial.days} dias de prueba gratis
+        </span>
+        <span class="badge badge-warning">
+          <span class="material-icons" style="font-size: 14px;"
+            >new_releases</span
+          >
+          Nueva version {latestVersion.version}
+        </span>
+      </div>
+
+      {config.app.logo && (
+        <img src={config.app.logo} alt={config.app.name} class="hero-logo" />
+      )}
+
+      <h1 class="hero-title">
+        El sistema de ventas ideal para tu <span class="text-primary"
+          >negocio pequeño</span
+        >
+      </h1>
+
+      <p class="hero-description">
+        Factu Lite te permite gestionar ventas, inventario y caja desde tu
+        celular o tablet. Funciona sin internet la mayor parte del tiempo. Tus
+        datos se quedan contigo.
+      </p>
+
+      <div class="hero-features">
+        <div class="hero-feature">
+          <span class="material-icons text-primary">wifi_off</span>
+          <span>Funciona sin internet</span>
+        </div>
+        <div class="hero-feature">
+          <span class="material-icons text-primary">smartphone</span>
+          <span>Solo Android</span>
+        </div>
+        <div class="hero-feature">
+          <span class="material-icons text-primary">security</span>
+          <span>Datos 100% tuyos</span>
+        </div>
+        <div class="hero-feature">
+          <span class="material-icons text-primary">license</span>
+          <span>Licencia por período</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href={latestVersion.apk} class="btn btn-primary btn-lg" download>
+          <span class="material-icons">download</span>
+          Descargar Prueba Gratis
+        </a>
+        <a
+          href={`${whatsappBase}${config.advisors[0].phone}?text=${encodeURIComponent(config.whatsappMessage)}`}
+          class="btn btn-whatsapp btn-lg"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+            ><path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+            ></path></svg
+          >
+          Hablar con un asesor
+        </a>
+      </div>
+
+      <p class="hero-version">
+        Version actual: <strong>{latestVersion.version}</strong> - Compatible con
+        Android 8.0+
+      </p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-phone">
+        <div class="phone-frame">
+          <img
+            src={config.screenshots[0]?.url ||
+              "https://placehold.co/360x640/10B981/FFFFFF?text=Factu+Lite"}
+            alt="Factu Lite app screenshot"
+            width="360"
+            height="640"
+          />
+        </div>
+      </div>
+      <div class="hero-float-cards">
+        <div class="float-card float-card-1">
+          <span class="material-icons text-primary">point_of_sale</span>
+          <div>
+            <strong>Ventas</strong>
+            <span>Facturas y tickets</span>
+          </div>
+        </div>
+        <div class="float-card float-card-2">
+          <span class="material-icons text-primary">inventory_2</span>
+          <div>
+            <strong>Inventario</strong>
+            <span>Control de stock</span>
+          </div>
+        </div>
+        <div class="float-card float-card-3">
+          <span class="material-icons text-primary">print</span>
+          <div>
+            <strong>Impresion</strong>
+            <span>Bluetooth termica</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 120px;
+    padding-bottom: var(--spacing-3xl);
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-50) 0%,
+      var(--color-bg) 100%
+    );
+    overflow: hidden;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .hero-logo {
+    height: 80px;
+    width: auto;
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.7;
+  }
+
+  .hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .hero-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .hero-version {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-phone {
+    position: relative;
+    z-index: 2;
+  }
+
+  .phone-frame {
+    background: var(--color-text);
+    border-radius: 32px;
+    padding: 12px;
+    box-shadow: var(--shadow-xl);
+    max-width: 280px;
+  }
+
+  .phone-frame img {
+    border-radius: 24px;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-float-cards {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--color-bg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    pointer-events: auto;
+    z-index: 3;
+  }
+
+  .float-card div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .float-card strong {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .float-card span {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .float-card .material-icons {
+    font-size: 28px;
+  }
+
+  .float-card-1 {
+    top: 10%;
+    left: -20px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .float-card-2 {
+    top: 45%;
+    right: -30px;
+    animation: float 3s ease-in-out infinite 0.5s;
+  }
+
+  .float-card-3 {
+    bottom: 15%;
+    left: -10px;
+    animation: float 3s ease-in-out infinite 1s;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .hero-title {
+      font-size: 2.25rem;
+    }
+
+    .phone-frame {
+      max-width: 220px;
+    }
+
+    .float-card-1 {
+      left: 0;
+    }
+    .float-card-2 {
+      right: 0;
+    }
+    .float-card-3 {
+      left: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 100px;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-2xl);
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-visual {
+      order: -1;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+    }
+
+    .float-card {
+      display: none;
+    }
+  }
+</style>

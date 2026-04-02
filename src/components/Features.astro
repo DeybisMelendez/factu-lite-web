@@ -1,0 +1,150 @@
+---
+import config from '../data/config.json';
+---
+
+<section class="features section" id="caracteristicas">
+  <div class="container">
+    <h2 class="section-title">Modulos y Funcionalidades</h2>
+    <p class="section-subtitle">
+      Todo lo que necesitas para gestionar tu negocio en una sola app.
+    </p>
+
+    <div class="features-grid">
+      {config.features.map(feature => (
+        <div class="feature-card card card-hover">
+          <div class="feature-icon">
+            <span class="material-icons">{feature.icon}</span>
+          </div>
+          <h3>{feature.title}</h3>
+          <p>{feature.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="features-more">
+      <h3>Otras funcionalidades importantes</h3>
+      <ul class="features-list">
+        <li>
+          <span class="material-icons text-primary">check_circle</span>
+          <span>Calculo automatico de costo promedio</span>
+        </li>
+        <li>
+          <span class="material-icons text-primary">check_circle</span>
+          <span>Alertas de stock minimo</span>
+        </li>
+        <li>
+          <span class="material-icons text-primary">check_circle</span>
+          <span>Gestion de ventas a credito</span>
+        </li>
+        <li>
+          <span class="material-icons text-primary">check_circle</span>
+          <span>Anulacion de ventas</span>
+        </li>
+        <li>
+          <span class="material-icons text-primary">check_circle</span>
+          <span>Reimpresion de tickets</span>
+        </li>
+        <li>
+          <span class="material-icons text-primary">check_circle</span>
+          <span>Respaldo y restauracion de datos</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    background-color: var(--color-surface);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .feature-card {
+    padding: var(--spacing-lg);
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary-50);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .feature-icon .material-icons {
+    font-size: 28px;
+    color: var(--color-primary);
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .feature-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .features-more {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+  }
+
+  .features-more h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .features-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .features-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9375rem;
+  }
+
+  .features-list .material-icons {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1023px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .features-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

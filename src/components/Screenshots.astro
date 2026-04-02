@@ -1,0 +1,93 @@
+---
+import config from '../data/config.json';
+---
+
+<section class="screenshots section" id="screenshots">
+  <div class="container">
+    <h2 class="section-title">Capturas de la App</h2>
+    <p class="section-subtitle">
+      Mira como luce Factu Lite en tu dispositivo Android.
+    </p>
+
+    <div class="screenshots-grid">
+      {config.screenshots.map((screenshot, index) => (
+        <div class="screenshot-item">
+          <div class="screenshot-frame">
+            <img 
+              src={screenshot.url} 
+              alt={screenshot.alt}
+              width="360"
+              height="640"
+              loading="lazy"
+            />
+          </div>
+          <p class="screenshot-title">{screenshot.title}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .screenshots {
+    background-color: var(--color-bg);
+  }
+
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .screenshot-item {
+    text-align: center;
+  }
+
+  .screenshot-frame {
+    background: var(--color-text);
+    border-radius: 24px;
+    padding: 10px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-md);
+    transition: transform var(--transition-normal);
+  }
+
+  .screenshot-item:hover .screenshot-frame {
+    transform: scale(1.02);
+  }
+
+  .screenshot-frame img {
+    border-radius: 16px;
+    width: 100%;
+    height: auto;
+  }
+
+  .screenshot-title {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 1023px) {
+    .screenshots-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .screenshots-grid > :last-child {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .screenshots-grid {
+      grid-template-columns: 1fr;
+      max-width: 300px;
+      margin: 0 auto var(--spacing-xl);
+    }
+
+    .screenshots-grid > :nth-child(2),
+    .screenshots-grid > :last-child {
+      display: block;
+    }
+  }
+</style>
