@@ -10,11 +10,7 @@ const latestVersion = config.versions[0];
     <div class="footer-content">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="40" height="40" rx="8" fill="#10B981"/>
-            <path d="M10 12h20v3H10zM10 18h20v3H10zM10 24h14v3H10z" fill="white"/>
-            <circle cx="30" cy="27" r="4" fill="#059669"/>
-          </svg>
+          <img src="/factulite.svg" alt="Factu Lite" width="32" height="32" />
           <span>Factu <span class="logo-lite">Lite</span></span>
         </a>
         <p class="footer-tagline">
@@ -97,6 +93,14 @@ const latestVersion = config.versions[0];
     font-weight: 700;
     font-size: 1.125rem;
     margin-bottom: var(--spacing-md);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .footer-brand .logo img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
   }
 
   .footer-brand .logo-lite {
