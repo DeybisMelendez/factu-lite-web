@@ -2,6 +2,7 @@
 import config from "../data/config.json";
 
 const latestVersion = config.versions[0];
+const recommendedApk = latestVersion.apks.find(apk => apk.recommended) || latestVersion.apks[0];
 const whatsappBase = "https://wa.me/";
 ---
 
@@ -57,7 +58,7 @@ const whatsappBase = "https://wa.me/";
       </div>
 
       <div class="hero-actions">
-        <a href={latestVersion.apk} class="btn btn-primary btn-lg" download>
+        <a href={recommendedApk.url} class="btn btn-primary btn-lg" download>
           <span class="material-icons">download</span>
           Descargar Prueba Gratis
         </a>

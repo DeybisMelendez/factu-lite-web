@@ -3,6 +3,7 @@ import config from '../data/config.json';
 
 const currentYear = new Date().getFullYear();
 const latestVersion = config.versions[0];
+const recommendedApk = latestVersion.apks.find(apk => apk.recommended) || latestVersion.apks[0];
 ---
 
 <footer class="footer">
@@ -32,15 +33,20 @@ const latestVersion = config.versions[0];
         <h4>Descargas</h4>
         <ul>
           <li>
-            <a href={latestVersion.apk} download>
+            <a href={recommendedApk.url} download>
               <span class="material-icons" style="font-size: 16px;">download</span>
               APK v{latestVersion.version}
             </a>
           </li>
-          <li>
-            <span class="material-icons" style="font-size: 16px;">android</span>
-            Android 8.0+
-          </li>
+          {latestVersion.apks.map(apk => (
+            <li>
+              <a href={apk.url} class:list={[{ "text-recommended": apk.recommended }]} download>
+                <span class="material-icons" style="font-size: 14px;">smartphone</span>
+                {apk.abi}
+                {apk.recommended && <span class="badge-small">Recomendado</span>}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -139,6 +145,24 @@ const latestVersion = config.versions[0];
 
   .footer-links a:hover {
     opacity: 1;
+  }
+
+  .text-recommended {
+    font-weight: 600;
+  }
+
+  .badge-small {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+    border-radius: 3px;
+    background: var(--color-primary-light);
+    color: var(--color-text);
+    margin-left: 4px;
+  }
+
+  .footer-links li .material-icons {
+    font-size: 14px;
+    vertical-align: middle;
   }
 
   .footer-bottom {

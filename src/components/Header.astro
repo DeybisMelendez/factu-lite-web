@@ -1,6 +1,8 @@
 ---
 import config from '../data/config.json';
+
 const latestVersion = config.versions[0];
+const recommendedApk = latestVersion.apks.find(apk => apk.recommended) || latestVersion.apks[0];
 ---
 
 <header class="header">
@@ -29,7 +31,7 @@ const latestVersion = config.versions[0];
         <li><a href="#faq" class="nav-link">Preguntas</a></li>
         <li><a href="#contacto" class="nav-link">Contactar</a></li>
       </ul>
-      <a href={latestVersion.apk} class="btn btn-primary btn-sm nav-cta" download>
+      <a href={recommendedApk.url} class="btn btn-primary btn-sm nav-cta" download>
         <span class="material-icons">download</span>
         Descargar v{latestVersion.version}
       </a>

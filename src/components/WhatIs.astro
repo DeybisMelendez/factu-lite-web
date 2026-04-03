@@ -1,5 +1,8 @@
 ---
 import config from '../data/config.json';
+
+const latestVersion = config.versions[0];
+const recommendedApk = latestVersion.apks.find(apk => apk.recommended) || latestVersion.apks[0];
 ---
 
 <section class="whatis section" id="que-es">
@@ -70,10 +73,24 @@ import config from '../data/config.json';
         </ul>
       </div>
       <div class="trial-action">
-        <a href="/downloads/factu-lite-v1.0.0.apk" class="btn btn-primary btn-lg" download>
-          <span class="material-icons">download</span>
-          Descargar Ahora
-        </a>
+        <div class="download-box">
+          <a href={recommendedApk.url} class="btn btn-primary btn-lg" download>
+            <span class="material-icons">download</span>
+            Descargar v{latestVersion.version}
+          </a>
+          <div class="download-variants">
+            {latestVersion.apks.map(apk => (
+              <a 
+                href={apk.url} 
+                class:list={["download-variant", { recommended: apk.recommended }]}
+                download
+              >
+                <span class="variant-name">{apk.abi}</span>
+                {apk.recommended && <span class="badge-recommended">Recomendado</span>}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -167,6 +184,55 @@ import config from '../data/config.json';
   .trial-action .btn:hover {
     background: var(--color-primary-50);
     transform: translateY(-2px);
+  }
+
+  .download-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .download-variants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    justify-content: center;
+  }
+
+  .download-variant {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    transition: background var(--transition-fast);
+  }
+
+  .download-variant:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .download-variant.recommended {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .variant-name {
+    font-family: monospace;
+    font-weight: 600;
+  }
+
+  .badge-recommended {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--color-warning);
+    color: var(--color-text);
+    font-weight: 600;
   }
 
   @media (max-width: 1023px) {

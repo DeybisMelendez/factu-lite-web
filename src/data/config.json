@@ -21,10 +21,42 @@
   ],
   "versions": [
     {
+      "version": "1.1.0",
+      "date": "2026-04-03",
+      "notes": "Optimizaciones y mejoras de rendimiento",
+      "apks": [
+        {
+          "abi": "arm64-v8a",
+          "url": "/downloads/v1.1.0/factu-lite-v1.1.0-arm64-v8a.apk",
+          "recommended": true,
+          "description": "Recomendado - Compatible con la mayoria de dispositivos"
+        },
+        {
+          "abi": "armeabi-v7a",
+          "url": "/downloads/v1.1.0/factu-lite-v1.1.0-armeabi-v7a.apk",
+          "recommended": false,
+          "description": "Para dispositivos antiguos"
+        },
+        {
+          "abi": "x86_64",
+          "url": "/downloads/v1.1.0/factu-lite-v1.1.0-x86_64.apk",
+          "recommended": false,
+          "description": "Para emuladores y tablets con Intel"
+        }
+      ]
+    },
+    {
       "version": "1.0.0",
       "date": "2026-04-01",
-      "apk": "/downloads/factu-lite-v1.0.0.apk",
-      "notes": "Version inicial"
+      "notes": "Version inicial",
+      "apks": [
+        {
+          "abi": "universal",
+          "url": "/downloads/factu-lite-v1.0.0.apk",
+          "recommended": true,
+          "description": "Version unificada"
+        }
+      ]
     }
   ],
   "promotion": {
