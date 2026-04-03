@@ -193,36 +193,34 @@ const latestVersion = config.versions[0];
   }
 </style>
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
+<script>
   const menuToggle = document.getElementById('menuToggle');
   const mainNav = document.getElementById('mainNav');
   const overlay = document.getElementById('navOverlay');
 
-  if (!menuToggle || !mainNav || !overlay) return;
+  if (menuToggle && mainNav && overlay) {
+    const icon = menuToggle.querySelector('.material-icons');
 
-  const icon = menuToggle.querySelector('.material-icons');
+    const closeMenu = () => {
+      mainNav.classList.remove('active');
+      overlay.classList.remove('active');
+      if (icon) icon.textContent = 'menu';
+    };
 
-  function closeMenu() {
-    mainNav.classList.remove('active');
-    overlay.classList.remove('active');
-    if (icon) icon.textContent = 'menu';
+    const openMenu = () => {
+      mainNav.classList.add('active');
+      overlay.classList.add('active');
+      if (icon) icon.textContent = 'close';
+    };
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.contains('active') ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
   }
-
-  function openMenu() {
-    mainNav.classList.add('active');
-    overlay.classList.add('active');
-    if (icon) icon.textContent = 'close';
-  }
-
-  menuToggle.addEventListener('click', () => {
-    mainNav.classList.contains('active') ? closeMenu() : openMenu();
-  });
-
-  overlay.addEventListener('click', closeMenu);
-
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-});
 </script>
