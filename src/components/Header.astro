@@ -1,6 +1,5 @@
 ---
 import config from '../data/config.json';
-
 const latestVersion = config.versions[0];
 ---
 
@@ -37,6 +36,8 @@ const latestVersion = config.versions[0];
     </nav>
   </div>
 </header>
+
+<div class="nav-overlay" id="navOverlay"></div>
 
 <style>
   .header {
@@ -116,23 +117,43 @@ const latestVersion = config.versions[0];
     margin-left: var(--spacing-md);
   }
 
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   @media (max-width: 767px) {
     .menu-toggle {
       display: flex;
+      z-index: 1100;
     }
 
     .nav {
       position: fixed;
-      top: 72px;
-      left: 0;
+      top: 0;
       right: 0;
-      bottom: 0;
-      background: var(--color-bg);
+      width: 78%;
+      max-width: 320px;
+      height: 100vh;
+      background: white;
       flex-direction: column;
-      padding: var(--spacing-xl);
-      gap: var(--spacing-lg);
+      padding: 90px 24px 24px;
+      gap: 28px;
       transform: translateX(100%);
-      transition: transform var(--transition-normal);
+      transition: transform .35s cubic-bezier(.77,0,.18,1);
+      box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+      z-index: 999;
     }
 
     .nav.active {
@@ -142,44 +163,66 @@ const latestVersion = config.versions[0];
     .nav-list {
       flex-direction: column;
       width: 100%;
+      gap: 10px;
     }
 
     .nav-link {
       display: block;
-      padding: var(--spacing-md);
-      font-size: 1.125rem;
-      border-bottom: 1px solid var(--color-border);
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 16px 18px;
+      border-radius: 12px;
+      background: #f5f7fb;
+      color: #1f2937;
+      border: none;
+    }
+
+    .nav-link:hover {
+      background: #10B981;
+      color: white;
     }
 
     .nav-cta {
-      margin-left: 0;
       margin-top: auto;
       width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 1.1rem;
+      border-radius: 14px;
     }
   }
 </style>
 
-<script>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById('menuToggle');
   const mainNav = document.getElementById('mainNav');
+  const overlay = document.getElementById('navOverlay');
 
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-      const icon = menuToggle.querySelector('.material-icons');
-      if (icon) {
-        icon.textContent = mainNav.classList.contains('active') ? 'close' : 'menu';
-      }
-    });
+  if (!menuToggle || !mainNav || !overlay) return;
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
-        const icon = menuToggle.querySelector('.material-icons');
-        if (icon) {
-          icon.textContent = 'menu';
-        }
-      });
-    });
+  const icon = menuToggle.querySelector('.material-icons');
+
+  function closeMenu() {
+    mainNav.classList.remove('active');
+    overlay.classList.remove('active');
+    if (icon) icon.textContent = 'menu';
   }
+
+  function openMenu() {
+    mainNav.classList.add('active');
+    overlay.classList.add('active');
+    if (icon) icon.textContent = 'close';
+  }
+
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.contains('active') ? closeMenu() : openMenu();
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+});
 </script>
