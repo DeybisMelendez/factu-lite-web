@@ -27,19 +27,19 @@
       "apks": [
         {
           "abi": "arm64-v8a",
-          "url": "/downloads/v1.1.1/factu-lite-v1.1.1-arm64-v8a.apk",
+          "url": "/downloads/v1.1.1/factu-lite-app-arm64-v8a.apk",
           "recommended": true,
           "description": "Recomendado - Compatible con la mayoria de dispositivos"
         },
         {
           "abi": "armeabi-v7a",
-          "url": "/downloads/v1.1.1/factu-lite-v1.1.1-armeabi-v7a.apk",
+          "url": "/downloads/v1.1.1/factu-lite-app-armeabi-v7a.apk",
           "recommended": false,
           "description": "Para dispositivos antiguos"
         },
         {
           "abi": "x86_64",
-          "url": "/downloads/v1.1.1/factu-lite-v1.1.1-x86_64.apk",
+          "url": "/downloads/v1.1.1/factu-lite-app-x86_64.apk",
           "recommended": false,
           "description": "Para emuladores y tablets con Intel"
         }
