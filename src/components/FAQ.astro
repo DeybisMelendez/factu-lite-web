@@ -1,5 +1,5 @@
 ---
-import config from '../data/config.json';
+import config from "../data/config.json";
 ---
 
 <section class="faq section" id="faq">
@@ -10,37 +10,52 @@ import config from '../data/config.json';
     </p>
 
     <div class="faq-list">
-      {config.faq.map((item, index) => (
-        <details class="faq-item card" name="faq">
-          <summary class="faq-question">
-            <span class="faq-number">{String(index + 1).padStart(2, '0')}</span>
-            <span class="faq-text">{item.question}</span>
-            <span class="faq-icon material-icons">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>{item.answer}</p>
-          </div>
-        </details>
-      ))}
+      {
+        config.faq.map((item, index) => (
+          <details class="faq-item card" name="faq">
+            <summary class="faq-question">
+              <span class="faq-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span class="faq-text">{item.question}</span>
+              <span class="faq-icon material-icons">expand_more</span>
+            </summary>
+            <div class="faq-answer">
+              <p>{item.answer}</p>
+            </div>
+          </details>
+        ))
+      }
     </div>
 
     <div class="limitations-box">
       <h3>
-        <span class="material-icons" style="font-size: 24px; vertical-align: middle;">info</span>
+        <span
+          class="material-icons"
+          style="font-size: 24px; vertical-align: middle;">info</span
+        >
         Limitaciones a considerar
       </h3>
       <ul class="limitations-list">
         <li>
           <span class="material-icons text-warning">block</span>
-          <span>Solo disponible para dispositivos Android (no funciona en iPhone/iPad)</span>
+          <span
+            >Solo disponible para dispositivos Android (no funciona en
+            iPhone/iPad)</span
+          >
         </li>
         <li>
           <span class="material-icons text-warning">block</span>
-          <span>Funciona en un solo dispositivo (sin sincronizacion entre dispositivos)</span>
+          <span
+            >Funciona en un solo dispositivo (sin sincronizacion entre
+            dispositivos)</span
+          >
         </li>
         <li>
           <span class="material-icons text-warning">block</span>
-          <span>Sin acceso remoto (no puedes ver tus ventas desde otro lugar)</span>
+          <span
+            >Sin acceso remoto (no puedes ver tus ventas desde otro lugar)</span
+          >
         </li>
         <li>
           <span class="material-icons text-warning">block</span>
@@ -183,15 +198,17 @@ import config from '../data/config.json';
   }
 </style>
 
-<script>
-  document.querySelectorAll('details.faq-item').forEach(details => {
-    details.addEventListener('toggle', () => {
+<script lang="js">
+  document.querySelectorAll("details.faq-item").forEach((details) => {
+    details.addEventListener("toggle", () => {
       if (details.open) {
-        document.querySelectorAll('details.faq-item[open]').forEach(openDetails => {
-          if (openDetails !== details) {
-            openDetails.removeAttribute('open');
-          }
-        });
+        document
+          .querySelectorAll("details.faq-item[open]")
+          .forEach((openDetails) => {
+            if (openDetails !== details) {
+              openDetails.removeAttribute("open");
+            }
+          });
       }
     });
   });
