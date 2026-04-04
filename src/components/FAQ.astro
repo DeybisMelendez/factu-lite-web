@@ -177,19 +177,25 @@ import config from '../data/config.json';
   }
 
   @media (max-width: 767px) {
-    .limitations-list {
+    .limitations-list {z
       grid-template-columns: 1fr;
     }
   }
 </style>
 
 <script>
-  document.querySelectorAll('details.faq-item').forEach(details => {
+  const faqItems = document.querySelectorAll('details.faq-item');
+
+  faqItems.forEach((item) => {
+    const details = item as HTMLDetailsElement;
+
     details.addEventListener('toggle', () => {
       if (details.open) {
-        document.querySelectorAll('details.faq-item[open]').forEach(openDetails => {
-          if (openDetails !== details) {
-            openDetails.removeAttribute('open');
+        faqItems.forEach((otherItem) => {
+          const otherDetails = otherItem as HTMLDetailsElement;
+
+          if (otherDetails !== details) {
+            otherDetails.removeAttribute('open');
           }
         });
       }
