@@ -21,6 +21,31 @@
   ],
   "versions": [
     {
+      "version": "1.2.1",
+      "date": "2026-04-06",
+      "notes": "Bug fixes y mejoras menores",
+      "apks": [
+        {
+          "abi": "arm64-v8a",
+          "url": "/downloads/v1.2.1/factulite-v1-2-1-arm64-v8a-release.apk",
+          "recommended": true,
+          "description": "Recomendado - Compatible con la mayoria de dispositivos"
+        },
+        {
+          "abi": "armeabi-v7a",
+          "url": "/downloads/v1.2.1/factulite-v1-2-1-armeabi-v7a-release.apk",
+          "recommended": false,
+          "description": "Para dispositivos antiguos"
+        },
+        {
+          "abi": "x86_64",
+          "url": "/downloads/v1.2.1/factulite-v1-2-1-x86_64-release.apk",
+          "recommended": false,
+          "description": "Para emuladores y tablets con Intel"
+        }
+      ]
+    },
+    {
       "version": "1.2.0",
       "date": "2026-04-05",
       "notes": "Bug fixes y mejoras menores",
@@ -102,7 +127,7 @@
       "apks": [
         {
           "abi": "universal",
-          "url": "/downloads/factu-lite-v1.0.0.apk",
+          "url": "/downloads/v1.0.0/factu-lite-v1.0.0.apk",
           "recommended": true,
           "description": "Version unificada"
         }
