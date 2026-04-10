@@ -172,12 +172,13 @@
         "id": "anual",
         "name": "Anual",
         "duration": "12 meses",
-        "price": 3700,
+        "price": 3800,
         "features": [
           "Acceso completo a todos los modulos",
           "Soporte prioritario por WhatsApp",
           "Actualizaciones incluidas",
-          "IMPRESORA TERMICA BLUETOOTH GRATIS"
+          "IMPRESORA TERMICA BLUETOOTH GRATIS",
+          "Envio gratis en toda Managua"
         ],
         "popular": true,
         "promo": true
