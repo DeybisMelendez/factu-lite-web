@@ -10,10 +10,6 @@ const whatsappBase = "https://wa.me/";
   <div class="container hero-content">
     <div class="hero-text">
       <div class="hero-badges">
-        <span class="badge badge-primary">
-          <span class="material-icons" style="font-size: 14px;">schedule</span>
-          {config.trial.days} dias de prueba gratis
-        </span>
         <span class="badge badge-warning">
           <span class="material-icons" style="font-size: 14px;"
             >new_releases</span
@@ -60,7 +56,7 @@ const whatsappBase = "https://wa.me/";
       <div class="hero-actions">
         <a href={recommendedApk.url} class="btn btn-primary btn-lg" download>
           <span class="material-icons">download</span>
-          Descargar Prueba Gratis
+          Descargar App
         </a>
         <a
           href={`${whatsappBase}${config.advisors[0].phone}?text=${encodeURIComponent(config.whatsappMessage)}`}
