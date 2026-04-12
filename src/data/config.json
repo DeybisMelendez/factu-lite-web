@@ -21,6 +21,31 @@
   ],
   "versions": [
     {
+      "version": "1.3.1",
+      "date": "2026-04-12",
+      "notes": "Nuevo: Activacion permanente disponible. Planes por tiempo limitado.",
+      "apks": [
+        {
+          "abi": "arm64-v8a",
+          "url": "/downloads/v1.3.1/factulite-v1.3.1.apk",
+          "recommended": true,
+          "description": "Recomendado - Compatible con la mayoria de dispositivos"
+        },
+        {
+          "abi": "armeabi-v7a",
+          "url": "/downloads/v1.3.1/factulite-v1.3.1-armeabi-v7a.apk",
+          "recommended": false,
+          "description": "Para dispositivos antiguos"
+        },
+        {
+          "abi": "x86_64",
+          "url": "/downloads/v1.3.1/factulite-v1.3.1-x86_64.apk",
+          "recommended": false,
+          "description": "Para emuladores y tablets con Intel"
+        }
+      ]
+    },
+    {
       "version": "1.3.0",
       "date": "2026-04-06",
       "notes": "Eliminado modo prueba gratuita, ahora requiere licencia para tener todas las funcionalidades.",
@@ -48,52 +73,60 @@
   ],
   "promotion": {
     "active": true,
-    "title": "Promocion Especial",
-    "description": "Impresora termica portatil Bluetooth GRATIS",
-    "condition": "Al obtener tu primera licencia anual",
+    "title": "Oferta por Tiempo Limitado",
+    "description": "Activacion permanente disponible",
+    "condition": "Planes con precio especial",
     "badge": "LIMITADO"
   },
   "pricing": {
     "currency": "C$",
     "plans": [
       {
-        "id": "trimestral",
-        "name": "Trimestral",
-        "duration": "3 meses",
-        "price": 1400,
+        "id": "permanente-1dispositivo",
+        "name": "Permanente",
+        "duration": "Un solo dispositivo",
+        "price": 1500,
         "features": [
           "Acceso completo a todos los modulos",
-          "Soporte por WhatsApp",
-          "Actualizaciones incluidas"
+          "Soporte basico por WhatsApp 30 dias",
+          "Activacion PERMANENTE",
+          "Solo 1 dispositivo"
         ],
-        "popular": false
+        "popular": false,
+        "promo": true
       },
       {
-        "id": "semestral",
-        "name": "Semestral",
-        "duration": "6 meses",
-        "price": 2200,
+        "id": "permanente-impresora",
+        "name": "Permanente con Impresora",
+        "duration": "Un solo dispositivo",
+        "price": 3300,
         "features": [
           "Acceso completo a todos los modulos",
-          "Soporte por WhatsApp",
-          "Actualizaciones incluidas"
+          "Soporte basico por WhatsApp 30 dias",
+          "Activacion PERMANENTE",
+          "Solo 1 dispositivo",
+          "IMPRESORA TERMICA BLUETOOTH COMPATIBLE INCLUIDA",
+          "Envio gratis en toda Managua"
         ],
-        "popular": false
+        "popular": true,
+        "promo": true
       },
       {
-        "id": "anual",
+        "id": "anual-multi",
         "name": "Anual",
         "duration": "12 meses",
         "price": 3800,
         "features": [
           "Acceso completo a todos los modulos",
+          "Licencia de uso de 12 meses",
           "Soporte prioritario por WhatsApp",
           "Actualizaciones incluidas",
-          "IMPRESORA TERMICA BLUETOOTH GRATIS",
+          "IMPRESORA TERMICA BLUETOOTH COMPATIBLE GRATIS",
+          "Activa en VARIOS DISPOSITIVOS",
           "Envio gratis en toda Managua"
         ],
-        "popular": true,
-        "promo": true
+        "popular": false,
+        "promo": false
       }
     ]
   },
