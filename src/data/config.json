@@ -227,6 +227,14 @@
     {
       "question": "Puedo transferir mi licencia a otro dispositivo?",
       "answer": "Si, puedes respaldar tus datos desde un dispositivo y restaurarlos en otro. Tu licencia se reactivara en el nuevo dispositivo."
+    },
+    {
+      "question": "Por que Factu Lite no esta en Google Play Store?",
+      "answer": "No subimos Factu Lite a Google Play Store para evitar cobros importantes que encarecerian el precio de la app. Google cobra una comision del 30% por cada venta, ademas de impuestos altos en Estados Unidos y comisiones por transferencias wire transfer para retirar lo pagado. Al evitar estos costos podemos mantener Factu Lite economica y especializada para pequenos negocios en Nicaragua."
+    },
+    {
+      "question": "Como instalo la APK en mi Android?",
+      "answer": "Para instalar Factu Lite desde la APK necesitas: 1) Ve a Ajustes de tu celular. 2) Busca Seguridad o Privacidad. 3) Activa Fuentes desconocidas o Instalar apps desconocidas para tu navegador. 4) Descarga la APK desde esta pagina. 5) Abre el archivo APK descargado. 6) Presiona Instalar y acepta los permisos si tu celular lo pide."
     }
   ],
   "whatsappMessage": "Hola! Me interesa conocer mas sobre Factu Lite."
