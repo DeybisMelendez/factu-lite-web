@@ -47,25 +47,25 @@
   ],
   "versions": [
     {
-      "version": "1.4.0",
-      "date": "2026-04-14",
-      "notes": "Agregado tipos de pago.",
+      "version": "1.4.1",
+      "date": "2026-04-16",
+      "notes": "Agregado tipos de pago a filtros, bug fixes.",
       "apks": [
         {
           "abi": "arm64-v8a",
-          "url": "/downloads/factulite-v1.4.0.apk",
+          "url": "/downloads/factulite-v1.4.1.apk",
           "recommended": true,
           "description": "Recomendado - Compatible con la mayoria de dispositivos"
         },
         {
           "abi": "armeabi-v7a",
-          "url": "/downloads/factulite-v1.4.0-armeabi-v7a.apk",
+          "url": "/downloads/factulite-v1.4.1-armeabi-v7a.apk",
           "recommended": false,
           "description": "Para dispositivos antiguos"
         },
         {
           "abi": "x86_64",
-          "url": "/downloads/factulite-v1.4.0-x86_64.apk",
+          "url": "/downloads/factulite-v1.4.1-x86_64.apk",
           "recommended": false,
           "description": "Para emuladores y tablets con Intel"
         }
@@ -93,8 +93,7 @@
         "price": 2000,
         "features": [
           "Acceso completo a todos los modulos",
-          "Soporte basico por WhatsApp 30 dias",
-          "Activacion PERMANENTE",
+          "Activación DE POR VIDA",
           "Solo 1 dispositivo"
         ],
         "popular": false,
@@ -104,11 +103,10 @@
         "id": "permanente-impresora",
         "name": "Permanente con Impresora",
         "duration": "Un solo dispositivo",
-        "price": 3300,
+        "price": 3800,
         "features": [
           "Acceso completo a todos los modulos",
-          "Soporte basico por WhatsApp 30 dias",
-          "Activacion PERMANENTE",
+          "Activación DE POR VIDA",
           "Solo 1 dispositivo",
           "IMPRESORA TERMICA BLUETOOTH COMPATIBLE INCLUIDA",
           "Envio gratis en toda Managua"
@@ -125,8 +123,8 @@
           "Acceso completo a todos los modulos",
           "Licencia de uso de 12 meses",
           "Soporte prioritario por WhatsApp",
-          "Actualizaciones incluidas",
-          "IMPRESORA TERMICA BLUETOOTH COMPATIBLE GRATIS",
+          "Solicite funcionalidades nuevas y mejoras",
+          "IMPRESORA TERMICA BLUETOOTH COMPATIBLE INCLUIDA",
           "Activa en VARIOS DISPOSITIVOS",
           "Envio gratis en toda Managua"
         ],
