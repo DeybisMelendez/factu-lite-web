@@ -47,25 +47,28 @@
   ],
   "versions": [
     {
-      "version": "1.4.1",
-      "date": "2026-04-16",
-      "notes": "Agregado tipos de pago a filtros, bug fixes.",
+      "version": "1.5.0",
+      "date": "2026-04-23",
+      "notes": [
+        "Bug fixes",
+        "Cambiado cantidad de venta de entero a decimal"
+      ],
       "apks": [
         {
           "abi": "arm64-v8a",
-          "url": "/downloads/factulite-v1.4.1.apk",
+          "url": "/downloads/factulite-v1.5.0.apk",
           "recommended": true,
           "description": "Recomendado - Compatible con la mayoria de dispositivos"
         },
         {
           "abi": "armeabi-v7a",
-          "url": "/downloads/factulite-v1.4.1-armeabi-v7a.apk",
+          "url": "/downloads/factulite-v1.5.0-armeabi-v7a.apk",
           "recommended": false,
           "description": "Para dispositivos antiguos"
         },
         {
           "abi": "x86_64",
-          "url": "/downloads/factulite-v1.4.1-x86_64.apk",
+          "url": "/downloads/factulite-v1.5.0-x86_64.apk",
           "recommended": false,
           "description": "Para emuladores y tablets con Intel"
         }
@@ -103,38 +106,21 @@
         "id": "permanente-impresora",
         "name": "Permanente con Impresora",
         "duration": "Un solo dispositivo",
-        "price": 3800,
+        "price": 3700,
         "features": [
           "Acceso completo a todos los modulos",
           "Activación DE POR VIDA",
           "Solo 1 dispositivo",
           "IMPRESORA TERMICA BLUETOOTH COMPATIBLE INCLUIDA",
-          "Envio gratis en toda Managua"
+          "Envio gratis a toda Nicaragua"
         ],
         "popular": true,
         "promo": true
-      },
-      {
-        "id": "anual-multi",
-        "name": "Anual",
-        "duration": "12 meses",
-        "price": 3800,
-        "features": [
-          "Acceso completo a todos los modulos",
-          "Licencia de uso de 12 meses",
-          "Soporte prioritario por WhatsApp",
-          "Solicite funcionalidades nuevas y mejoras",
-          "IMPRESORA TERMICA BLUETOOTH COMPATIBLE INCLUIDA",
-          "Activa en VARIOS DISPOSITIVOS",
-          "Envio gratis en toda Managua"
-        ],
-        "popular": false,
-        "promo": false
       }
     ]
   },
   "trial": {
-    "days": 0,
+    "days": 7,
     "limitations": [
       "Hasta 10 productos registrados",
       "Hasta 10 ventas registradas",
@@ -213,7 +199,7 @@
   "faq": [
     {
       "question": "Factu Lite tiene modo de prueba gratis?",
-      "answer": "Sí, puedes usar Factu Lite sin licencia. Viene con un modo de prueba que incluye todas las funcionalidades, pero con limitaciones: hasta 10 productos, 10 ventas, 10 compras, 5 clientes y 3 vendedores registrados. También tiene limitaciones de impresión Bluetooth, exportación CSV y sincronización. Activa tu licencia para quitar todas las limitaciones."
+      "answer": "Sí, puedes probar Factu Lite gratis con todas las funcionalidades durante 7 días. Después de ese período necesitarás una licencia para continuar usando la app sin limitaciones."
     },
     {
       "question": "Puedo usar Factu Lite en varios dispositivos?",
@@ -225,7 +211,7 @@
     },
     {
       "question": "Que pasa cuando vence la licencia?",
-      "answer": "Cuando vence la licencia, deberas solicitar una renovacion para continuar usando Factu Lite con todas sus funcionalidades."
+      "answer": "Las licencias de Factu Lite son permanentes. Una vez que adquieres tu licencia, queda activada para siempre sin necesidad de renovar."
     },
     {
       "question": "Puedo transferir mi licencia a otro dispositivo?",

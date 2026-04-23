@@ -18,6 +18,15 @@ const whatsappBase = "https://wa.me/";
         </span>
       </div>
 
+      <div class="version-notes">
+        <span class="version-label">Novedades:</span>
+        <ul class="version-notes-list">
+          {latestVersion.notes.map(note => (
+            <li>{note}</li>
+          ))}
+        </ul>
+      </div>
+
       {config.app.logo && (
         <img src={config.app.logo} alt={config.app.name} class="hero-logo" />
       )}
@@ -46,7 +55,7 @@ const whatsappBase = "https://wa.me/";
         </div>
         <div class="hero-feature">
           <span class="material-icons text-primary">license</span>
-          <span>Licencia por período</span>
+          <span>Licencia permanente</span>
         </div>
       </div>
 
@@ -138,7 +147,50 @@ const whatsappBase = "https://wa.me/";
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .version-notes {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .version-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .version-notes-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .version-notes-list li {
+    font-size: 0.8125rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .version-notes-list li::before {
+    content: "+";
+    color: var(--color-primary);
+    font-weight: 700;
   }
 
   .hero-logo {
